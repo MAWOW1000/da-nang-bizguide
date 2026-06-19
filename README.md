@@ -1,15 +1,15 @@
 # Da Nang BizGuide
 
-Working title: Da Nang BizGuide: AI and Blockchain-Based Regulatory Guidance Platform for Business Establishment in Da Nang City
+Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City
 
-This repository is the master project workspace for designing, building, documenting, and evaluating a website that helps entrepreneurs and investors understand how to open a company in Da Nang, Vietnam.
+This repository is the master project workspace for designing, building, documenting, and evaluating a website that helps both local Vietnamese entrepreneurs and foreign investors understand how to open a company in Da Nang, Vietnam.
 
 The system will combine:
 
 - A public website for business setup guidance.
 - An AI chatbot that answers questions using verified official sources.
 - A regulatory knowledge base with citations, version control, and human review.
-- A blockchain registry for proving the integrity and history of important information.
+- An EVM-compatible blockchain registry for proving the integrity and history of important information.
 - Admin tools for updating and approving legal/regulatory knowledge.
 
 Important note: this project should provide guidance and source-backed explanations, not formal legal advice. All legal content must be verified against official sources before being shown as trusted information.
@@ -58,7 +58,7 @@ The first required sections from the whiteboard/photo are drafted in:
 
 ## Proposed Product Idea
 
-Da Nang BizGuide will act as a trusted digital assistant for people who want to start a business in Da Nang but do not understand the procedures, documents, and regulatory steps.
+Da Nang BizGuide will act as a trusted digital assistant for local Vietnamese founders and foreign investors who want to start a business in Da Nang but do not understand the procedures, documents, and regulatory steps.
 
 The chatbot should answer questions such as:
 
@@ -70,10 +70,11 @@ The chatbot should answer questions such as:
 
 The blockchain layer will not store private files or full legal text. Instead, it will store hashes and metadata that prove a regulation snapshot, checklist, chatbot answer package, or admin approval existed in a specific version at a specific time.
 
-## Next Decisions
+## Confirmed Direction
 
-- Confirm the final project title.
-- Choose the first target user group: local Vietnamese founders, foreign investors, or both.
-- Choose prototype technology: EVM smart contracts for speed, or Hyperledger Fabric for a more government-style permissioned model.
-- Decide whether the first version supports English only, Vietnamese only, or bilingual Vietnamese and English.
-
+- Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City.
+- Target users: both local Vietnamese entrepreneurs and foreign investors.
+- Blockchain direction: use EVM for the prototype because it is popular, mature, well-supported, and easy to demonstrate.
+- Deployment direction: deploy to a lower-cost EVM-compatible network or Layer 2 instead of Ethereum mainnet.
+- Documentation language: English.
+- Product language direction: bilingual Vietnamese and English support, with English project documentation.

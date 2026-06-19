@@ -10,7 +10,7 @@ Goals:
 
 - Finalize project title and scope.
 - Collect official source candidates.
-- Define target users.
+- Define local Vietnamese entrepreneur and foreign investor user journeys.
 - Draft thesis outline.
 - Confirm technology stack.
 
@@ -71,6 +71,7 @@ Goals:
 - Add verification page.
 - Connect backend to blockchain.
 - Test tamper detection.
+- Select a low-cost EVM-compatible deployment target for demo.
 
 Deliverables:
 
@@ -78,6 +79,7 @@ Deliverables:
 - Smart contract tests.
 - Backend blockchain integration.
 - User-facing verification view.
+- Low-cost EVM deployment notes.
 
 ## Phase 5: AI Quality and Admin Review
 
@@ -140,10 +142,9 @@ Deliverables:
 
 If time remains:
 
-- Add Vietnamese and English bilingual support.
+- Improve Vietnamese and English bilingual support.
 - Add automatic source monitoring.
 - Add expert marketplace handoff.
 - Add mobile-responsive improvements.
 - Add more Da Nang-specific investment scenarios.
-- Compare EVM smart contracts with Hyperledger Fabric in the thesis discussion.
-
+- Compare EVM deployment options and briefly discuss permissioned blockchain as future work.

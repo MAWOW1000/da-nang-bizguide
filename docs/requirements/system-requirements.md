@@ -8,6 +8,7 @@ Public user:
 - Asks chatbot questions.
 - Generates a checklist.
 - Views official source citations and blockchain verification.
+- Can be either a local Vietnamese entrepreneur or a foreign investor.
 
 Registered user:
 
@@ -33,6 +34,7 @@ Admin:
 
 - The system shall provide an introduction to business setup support in Da Nang.
 - The system shall allow users to start from common scenarios.
+- The system shall support both local founder and foreign investor scenarios.
 - The system shall provide a chatbot interface.
 - The system shall display source citations in chatbot answers.
 - The system shall display last-verified dates for trusted content.
@@ -68,11 +70,13 @@ Admin:
 - The system shall register approved version hashes on blockchain.
 - The system shall store blockchain transaction ids for verification.
 
-### Blockchain Verification
+### EVM Blockchain Verification
 
 - The system shall verify whether a knowledge version hash matches the on-chain record.
 - The system shall show verification status to users.
 - The system shall preserve historical version records.
+- The prototype shall use EVM-compatible smart contracts.
+- The deployment target should be a low-cost EVM-compatible network or Layer 2.
 
 ## Non-Functional Requirements
 
@@ -130,7 +134,7 @@ Must have:
 
 Should have:
 
-- Bilingual Vietnamese/English content.
+- Bilingual Vietnamese/English content for users, with English documentation for the project.
 - Saved checklist.
 - Conversation history.
 - Source update dashboard.
@@ -142,4 +146,3 @@ Could have:
 - Automatic source monitoring.
 - Mobile app.
 - Integration with official portals.
-

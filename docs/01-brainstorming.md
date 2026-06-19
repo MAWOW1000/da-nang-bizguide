@@ -6,12 +6,12 @@ Build Da Nang BizGuide as a trusted regulatory navigator, not just a chatbot.
 
 The strongest master-project idea is:
 
-An AI-powered company formation assistant for Da Nang that combines source-grounded regulatory guidance, human-reviewed legal knowledge, and blockchain-based proof of information integrity.
+An AI-powered company formation assistant for Da Nang that combines source-grounded regulatory guidance, human-reviewed legal knowledge, and EVM blockchain-based proof of information integrity.
 
 This gives the project three strong academic pillars:
 
 - AI: natural-language guidance, chatbot, RAG, multilingual support.
-- Blockchain: tamper-evident registry for source versions and approved knowledge.
+- EVM blockchain: tamper-evident registry for source versions and approved knowledge.
 - Public service / e-government: better access to business registration information.
 
 ## Target Users
@@ -52,16 +52,17 @@ MVP modules:
 
 Advanced modules:
 
-- Multilingual support: Vietnamese, English, Korean, Chinese, Japanese.
+- Bilingual Vietnamese and English support for the core product.
+- Additional languages such as Korean, Chinese, and Japanese can be future extensions.
 - AI agent that compares user situation with applicable procedure paths.
 - AI marketplace or expert handoff where verified consultants can answer complex cases.
 - Automatic source monitoring for changed legal pages.
 - Knowledge graph of agencies, procedures, forms, business types, and legal documents.
 - User workspace for saving checklists and notes.
 
-## Why Blockchain Matters Here
+## Why EVM Blockchain Matters Here
 
-Blockchain should solve a trust and audit problem.
+EVM blockchain should solve a trust and audit problem.
 
 Good blockchain use cases:
 
@@ -77,6 +78,21 @@ Weak blockchain use cases to avoid:
 - Storing personal documents on-chain.
 - Using blockchain only as a database replacement.
 - Adding crypto payments unless the thesis specifically needs it.
+
+## Blockchain Network Direction
+
+Use EVM for development and demonstration because it is popular, mature, and has strong tooling.
+
+Recommended prototype stack:
+
+- Solidity
+- Hardhat
+- OpenZeppelin
+- Ethers.js
+- Local Hardhat network for development
+- Low-cost EVM-compatible network or Layer 2 for deployment
+
+Ethereum mainnet should not be the first deployment target because the cost is unnecessary for a master-project prototype. A lower-cost EVM-compatible network can demonstrate the same architecture while keeping deployment practical.
 
 ## Suggested Innovation
 
@@ -128,4 +144,3 @@ Da Nang BizGuide
 Reason:
 
 It is understandable for non-technical users, but the thesis title can still include AI and blockchain.
-

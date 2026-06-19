@@ -4,9 +4,9 @@ Created: 2026-06-19
 
 ## 1. Title
 
-Recommended title:
+Recommended final title:
 
-Da Nang BizGuide: AI and Blockchain-Based Regulatory Guidance Platform for Business Establishment in Da Nang City
+Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City
 
 Short name:
 
@@ -14,8 +14,8 @@ Da Nang BizGuide
 
 Alternative academic titles:
 
-- Trusted AI Chatbot for Business Registration Guidance in Da Nang Using Blockchain-Based Information Provenance
-- A Blockchain-Secured Regulatory Knowledge Platform for Company Formation Support in Da Nang
+- Trusted AI Chatbot for Business Registration Guidance in Da Nang Using EVM-Based Information Provenance
+- An EVM Blockchain-Secured Regulatory Knowledge Platform for Company Formation Support in Da Nang
 - AI-Powered Business Establishment Assistant with Verifiable Legal Knowledge for Da Nang City
 
 Keywords:
@@ -24,7 +24,7 @@ Keywords:
 - Regulatory technology
 - Business registration
 - Da Nang
-- Blockchain
+- EVM blockchain
 - Knowledge provenance
 - RAG
 - Smart contracts
@@ -32,7 +32,7 @@ Keywords:
 
 ## 2. Details / Problem Description
 
-Da Nang is an important economic and innovation center in Central Vietnam. Many local founders, small business owners, and foreign investors want to open companies in the city, but the process can be difficult for people who are not familiar with Vietnamese business regulations, administrative procedures, official portals, document requirements, and post-registration obligations.
+Da Nang is an important economic and innovation center in Central Vietnam. Many local founders, small business owners, startup teams, and foreign investors want to open companies in the city, but the process can be difficult for people who are not familiar with Vietnamese business regulations, administrative procedures, official portals, document requirements, and post-registration obligations.
 
 The information needed to start a company is often spread across many places: national business registration portals, city public service portals, legal document databases, tax systems, social insurance systems, investment promotion websites, and professional service providers. This creates several problems:
 
@@ -43,7 +43,7 @@ The information needed to start a company is often spread across many places: na
 - A normal chatbot can produce fluent but unsupported answers if it is not connected to trusted sources.
 - Important regulatory knowledge needs version history, review records, and integrity proof.
 
-The project proposes a website and chatbot that guide users through the business establishment process in Da Nang. The chatbot will use a verified knowledge base and retrieval-augmented generation so answers can include source references and confidence boundaries. Important knowledge items, versions, and approvals will be recorded using blockchain-based hashes to provide tamper-evident provenance without exposing private user data.
+The project proposes a website and chatbot that guide both local Vietnamese entrepreneurs and foreign investors through the business establishment process in Da Nang. The chatbot will use a verified knowledge base and retrieval-augmented generation so answers can include source references and confidence boundaries. Important knowledge items, versions, and approvals will be recorded using EVM blockchain-based hashes to provide tamper-evident provenance without exposing private user data.
 
 The core problem is not only "how to answer business registration questions." The deeper research problem is how to build a trustworthy AI guidance system for regulatory information where accuracy, source traceability, update history, and user confidence are essential.
 
@@ -51,15 +51,15 @@ The core problem is not only "how to answer business registration questions." Th
 
 General objective:
 
-Design and implement a trusted web platform that helps users understand company establishment requirements in Da Nang by combining an AI chatbot, a verified regulatory knowledge base, and blockchain-based information integrity verification.
+Design and implement a trusted web platform that helps local Vietnamese entrepreneurs and foreign investors understand company establishment requirements in Da Nang by combining an AI chatbot, a verified regulatory knowledge base, and EVM blockchain-based information integrity verification.
 
 Specific objectives:
 
-- Build a user-friendly website for business setup guidance in Da Nang.
+- Build a user-friendly website for business setup guidance in Da Nang for both local and foreign users.
 - Develop an AI chatbot that answers regulatory questions using verified source documents.
 - Create a structured knowledge base for business registration steps, document requirements, agencies, official portals, and common user scenarios.
 - Design an admin workflow for reviewing, approving, and versioning regulatory content.
-- Use blockchain to store hashes and metadata for important approved knowledge versions.
+- Use an EVM-compatible blockchain to store hashes and metadata for important approved knowledge versions.
 - Provide source citations, last-verified dates, and confidence notes in chatbot answers.
 - Evaluate the system using usability testing, answer accuracy testing, and blockchain integrity verification.
 
@@ -67,7 +67,7 @@ Research questions:
 
 - How can an AI chatbot reduce the difficulty of understanding business establishment procedures in Da Nang?
 - How can retrieval-augmented generation reduce hallucination risk in regulatory guidance?
-- How can blockchain improve trust in the integrity and version history of legal/regulatory knowledge?
+- How can EVM blockchain improve trust in the integrity and version history of legal/regulatory knowledge?
 - What architecture is suitable for combining AI, official-source knowledge, and blockchain verification in an e-government support context?
 
 Expected outputs:
@@ -81,8 +81,8 @@ Expected outputs:
 
 Scope:
 
-- Focus on company establishment guidance in Da Nang.
-- Start with common company setup scenarios.
+- Focus on company establishment guidance in Da Nang for local Vietnamese entrepreneurs and foreign investors.
+- Start with common local-founder and foreign-investor company setup scenarios.
 - Prioritize guidance, checklists, source citations, and official portal links.
 - Store only hashes and metadata on-chain.
 
@@ -110,9 +110,12 @@ Recommended stack for the prototype:
 | DevOps | Docker, Docker Compose, GitHub Actions | Reproducible local development and testing |
 | Testing | Pytest, Playwright, smart contract tests | Backend, UI, and blockchain verification |
 
-Possible later upgrade:
+Deployment strategy:
 
-- Hyperledger Fabric can be considered if the thesis wants a permissioned-government architecture. For the first year, an EVM smart contract prototype is simpler and easier to demonstrate.
+- Use EVM for the prototype because it is popular, mature, well-supported, and easy to demonstrate in a master project.
+- Avoid Ethereum mainnet for deployment because transaction fees can be expensive.
+- Deploy the demonstration version to a lower-cost EVM-compatible network or Layer 2, such as Polygon, Arbitrum, Optimism, Base, BNB Smart Chain, or a private/local EVM test network.
+- Discuss Hyperledger Fabric only as a possible future permissioned-government architecture, not as the main implementation path.
 
 ## 5. Architecture
 
@@ -167,4 +170,3 @@ Example user flow:
 5. The chatbot retrieves official-source chunks from the knowledge base.
 6. The chatbot answers with citations and a last-verified date.
 7. User can click "verify knowledge version" to see the blockchain proof for the source bundle used.
-

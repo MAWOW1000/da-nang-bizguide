@@ -7,13 +7,13 @@ The platform should provide trustworthy business establishment guidance by conne
 - User experience layer
 - AI guidance layer
 - Verified regulatory knowledge layer
-- Blockchain integrity layer
+- EVM blockchain integrity layer
 
 ## System Context
 
 ```mermaid
 flowchart LR
-    USER[Entrepreneur / Investor] --> WEB[Da Nang BizGuide Website]
+    USER[Local Entrepreneur / Foreign Investor] --> WEB[Da Nang BizGuide Website]
     ADMIN[Reviewer / Admin] --> ADMINUI[Admin Portal]
     WEB --> API[Application API]
     ADMINUI --> API
@@ -37,7 +37,7 @@ Responsibilities:
 - Show generated checklists.
 - Show source citations.
 - Show blockchain proof status.
-- Support Vietnamese and English UI in later versions.
+- Support Vietnamese and English UI for the main user groups.
 
 Suggested implementation:
 
@@ -103,7 +103,7 @@ Core entities:
 - KnowledgeVersion
 - ReviewApproval
 
-### 5. Blockchain Registry
+### 5. EVM Blockchain Registry
 
 Responsibilities:
 
@@ -112,6 +112,16 @@ Responsibilities:
 - Register approval event hashes.
 - Allow public verification by hash.
 - Emit events for audit history.
+
+Prototype implementation:
+
+- Solidity smart contracts.
+- Hardhat development and testing.
+- Ethers.js integration.
+- Local EVM network during development.
+- Low-cost EVM-compatible network or Layer 2 for demo deployment.
+
+Ethereum mainnet is not required for the first deployment because the project only needs verifiable proof of integrity, not high-value financial settlement.
 
 Data stored on-chain:
 
@@ -150,7 +160,7 @@ sequenceDiagram
     participant API as Backend API
     participant AI as AI/RAG Service
     participant KB as Knowledge Base
-    participant BC as Blockchain Registry
+    participant BC as EVM Blockchain Registry
 
     U->>FE: Ask question
     FE->>API: POST /chat
@@ -171,7 +181,7 @@ sequenceDiagram
     participant A as Admin
     participant API as Backend API
     participant KB as Knowledge Base
-    participant BC as Blockchain Registry
+    participant BC as EVM Blockchain Registry
 
     A->>API: Add or update source
     API->>KB: Save draft source snapshot
@@ -216,4 +226,3 @@ Future functions:
 - multi-reviewer approval
 - organization-based permissions
 - revoked or superseded version markers
-

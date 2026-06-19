@@ -2,7 +2,7 @@
 
 ## Research Direction
 
-The project studies how AI and blockchain can be combined to create a trusted regulatory guidance platform for business establishment in Da Nang.
+The project studies how AI and EVM blockchain can be combined to create a trusted regulatory guidance platform for business establishment in Da Nang.
 
 The focus is not only implementation. The research should evaluate whether the architecture improves:
 
@@ -14,14 +14,14 @@ The focus is not only implementation. The research should evaluate whether the a
 
 ## Main Research Question
 
-How can an AI chatbot with blockchain-based knowledge provenance support trustworthy business establishment guidance for users in Da Nang?
+How can an AI chatbot with EVM blockchain-based knowledge provenance support trustworthy business establishment guidance for local entrepreneurs and foreign investors in Da Nang?
 
 ## Sub-Questions
 
-- What information do users need most when opening a company in Da Nang?
+- What information do local Vietnamese entrepreneurs and foreign investors need most when opening a company in Da Nang?
 - How should regulatory knowledge be collected, structured, reviewed, and versioned?
 - How can RAG reduce unsupported chatbot answers in a legal/regulatory domain?
-- What information should be stored on-chain and what should stay off-chain?
+- What information should be stored on an EVM-compatible blockchain and what should stay off-chain?
 - How can users verify that guidance came from an approved knowledge version?
 - How effective is the prototype in usability, accuracy, and trust?
 
@@ -119,4 +119,3 @@ Data privacy risk:
 Scope risk:
 
 - Start with a small set of high-value procedures and expand gradually.
-
