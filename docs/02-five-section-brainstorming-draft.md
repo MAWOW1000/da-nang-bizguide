@@ -8,6 +8,10 @@ Document language: English
 
 Purpose: This document is for brainstorming and supervisor discussion before creating the final `.docx` file. It expands the five whiteboard sections: Title, Details / Problem Description, Objective, Tech Used, and Architecture.
 
+Core thesis framing:
+
+This project is not only a chatbot website. It is a trusted AI regulatory guidance system. AI helps users understand complicated business establishment procedures, while EVM blockchain provides verifiable proof that the knowledge used by the AI was approved, versioned, and not secretly modified.
+
 ## 1. Title
 
 ### Recommended Title
@@ -75,19 +79,78 @@ The project should use verified sources during thesis writing. Current evidence 
 
 - The Government of Vietnam approved a program for cutting and simplifying administrative procedures related to production and business activities for 2025 and 2026. The program targets at least 30 percent reduction of unnecessary investment conditions, at least 30 percent reduction of procedure processing time, and 30 percent reduction of compliance costs in 2025. In 2026, processing time and compliance costs are targeted to be reduced by half compared with 2024.
 - The same Government Portal article states that 4,435 out of 6,367 administrative procedures had been made available on the National Public Service Portal, showing the national direction toward online public services.
+- VietnamPlus reported that more than 3,400 administrative procedures and business conditions had been cut or simplified, with procedure time reduced by 53 percent and compliance costs reduced by 54.6 percent compared with 2024. This supports the argument that administrative procedure complexity is a real national-level problem.
 - Da Nang's official portal reported that the city ranked highly in innovation indicators and entered the global Top 1,000 startup ecosystems in 2025, showing the city's direction toward innovation and startup development.
 - The Da Nang Center for Innovation Startup Support is a public service unit under the Da Nang Department of Science and Technology and supports innovation, startup programs, sandbox activities, and related policy communication.
+- The National Business Database project aims to improve transparency, business data quality, and data sharing, and it mentions modern data technologies such as AI and machine learning. This supports the project's direction of structured, trusted business information.
 
 These points support the argument that administrative simplification, business support, innovation, and digital public services are real priorities in Vietnam and Da Nang.
 
 Candidate sources for final citation:
 
 - Government Portal of Vietnam: https://en.baochinhphu.vn/govt-approves-program-to-cut-and-simplify-administrative-procedures-for-2025-2026-111250327100445608.htm
+- VietnamPlus: https://en.vietnamplus.vn/over-3400-administrative-procedures-business-conditions-cut-or-simplified-post344619.vnp
+- Viet Nam News: https://vietnamnews.vn/economy/1725482/project-on-national-business-database-approved.html
 - Da Nang official portal: https://www.danang.gov.vn/
 - Da Nang Center for Innovation Startup Support: https://startupdanang.vn/en/about
 - National Business Registration Portal: https://dangkykinhdoanh.gov.vn/
 - National Public Service Portal: https://dichvucong.gov.vn/
 - National Legal Document Database: https://vbpl.vn/
+
+### Problem Scale Logic
+
+The project should be explained using the same logic as a crisis-support app example, but with a business and public-service context.
+
+In a crisis app, the problem is urgent demand coordination: many people need food, medicine, or support, and the system reduces delay and confusion.
+
+In this project, the problem is administrative and regulatory coordination: many founders and investors need correct guidance, but the information is distributed across official portals, legal documents, and local procedures. The system reduces search time, confusion, incorrect document preparation, and distrust in AI answers.
+
+The affected group is not the whole population. It is a focused but important group:
+
+- Local entrepreneurs planning to open companies in Da Nang.
+- Foreign investors evaluating whether and how to establish a company.
+- Startup teams preparing documents and procedures.
+- Public-service or business-support staff who answer repeated questions.
+- Reviewers and administrators who maintain trusted regulatory knowledge.
+
+The measurable impact should be evaluated through controlled tests rather than claimed before implementation.
+
+Possible impact claims after evaluation:
+
+- Reduction in time needed to find correct procedure information.
+- Reduction in unsupported chatbot answers.
+- Improvement in user trust when citations and blockchain verification are displayed.
+- Successful detection of modified approved knowledge through blockchain hash mismatch.
+- Improvement in checklist clarity compared with manual search.
+
+### Information Needed To Prove The Problem
+
+To make the thesis stronger, collect these data points during the research phase:
+
+- Number of new enterprises registered in Da Nang per year.
+- Number of foreign investment projects or foreign-invested enterprises in Da Nang.
+- Number of online public-service dossiers related to business or investment procedures.
+- Common questions asked by founders and investors.
+- Common mistakes in document preparation, if available from interviews or public-service staff.
+- Number of official portals and documents users need to check.
+- Frequency of legal or procedure updates.
+- User survey results showing difficulty, time spent, and trust level before using the prototype.
+
+These numbers will allow the thesis to move from "this seems useful" to "this solves a measurable problem."
+
+### Alternative AI + Blockchain Ideas Considered
+
+| Idea | Problem Solved | Why It Is Strong | Why It May Be Harder |
+| --- | --- | --- | --- |
+| Crisis relief and essential supply app | People need food, medicine, and urgent support during disasters or pandemics | Large social impact, clear urgency | Requires real-time logistics, sensitive data, government/NGO coordination |
+| Drug authenticity and medicine guidance | Users need safe medicine and verified supply chains | Strong blockchain use case for provenance | Healthcare regulation is high-risk and harder to test |
+| Education certificate verification with AI career guidance | Employers need to verify certificates and students need guidance | Simple blockchain verification use case | Less connected to Da Nang business establishment topic |
+| Public procurement transparency assistant | Citizens and businesses need transparent tender information | Strong anti-corruption and audit angle | Sensitive domain, harder access to data |
+| Da Nang business establishment guidance | Founders and investors need correct, trusted regulatory guidance | Realistic scope, official sources available, strong AI + blockchain fit | Needs careful legal disclaimers and source verification |
+
+Recommended choice:
+
+Keep the Da Nang business establishment project. It is the best balance between real problem, local relevance, available official sources, feasible prototype, AI usefulness, and blockchain justification.
 
 ### Target Users
 
@@ -463,14 +526,39 @@ No. The system stores only hashes and metadata on-chain. Personal documents, use
 
 The project can measure answer accuracy, citation quality, hallucination rate, user task time, user trust, and blockchain tamper detection. These metrics make the thesis stronger than a simple implementation report.
 
-## Brainstorming Decisions To Approve
+### Question 8: Is this problem big enough?
 
-Please review and decide:
+Yes, if the project is framed correctly. The goal is not to serve every citizen like a pandemic support app. The goal is to solve a focused public-service and business-support problem for entrepreneurs, foreign investors, startup teams, and staff who need reliable regulatory information. The thesis should prove the problem using Da Nang business registration data, foreign investment data, user interviews, and usability testing.
 
-1. Final title: Keep the recommended title or choose an alternative?
-2. Main scope: Start with both local founder and foreign investor scenarios?
-3. Product language: Vietnamese and English user-facing content, with English thesis documentation?
-4. Blockchain network: EVM prototype with low-cost EVM-compatible deployment?
-5. Evaluation targets: Are the proposed targets realistic for your supervisor and timeline?
-6. DOCX export: After approval, generate a polished `.docx` file from this content?
+### Question 9: Why is this better than other AI and blockchain ideas?
 
+Other ideas such as crisis relief, medicine provenance, and public procurement may have bigger social impact, but they are harder to access, harder to test, and may involve sensitive operational or medical data. This project is better for a master timeline because official sources are available, the prototype can be tested safely, and the AI plus blockchain contribution is clear.
+
+### Question 10: What is the main contribution in one sentence?
+
+The project contributes a trusted regulatory guidance architecture where official documents reduce AI hallucination and EVM blockchain verifies the integrity, approval history, and version provenance of the knowledge used by the chatbot.
+
+## Confirmed Direction And Remaining Evidence
+
+Confirmed direction:
+
+1. Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City.
+2. Main scope: both local Vietnamese entrepreneur and foreign investor scenarios.
+3. Product language direction: Vietnamese and English user-facing content.
+4. Documentation language: English.
+5. Blockchain network: EVM prototype with low-cost EVM-compatible deployment.
+6. Main technical contribution: official-source RAG plus blockchain-based knowledge provenance.
+
+Remaining evidence to collect:
+
+1. Da Nang enterprise registration statistics.
+2. Da Nang foreign investment statistics.
+3. Public-service usage data related to business procedures, if available.
+4. Interviews or survey answers from local founders, foreign investors, or support staff.
+5. A controlled question set for chatbot accuracy evaluation.
+6. A user test comparing manual search with Da Nang BizGuide.
+7. A blockchain tamper-detection test report.
+
+Next deliverable:
+
+Convert this draft into a polished supervisor-ready `.docx` or thesis proposal section after the wording is approved.
