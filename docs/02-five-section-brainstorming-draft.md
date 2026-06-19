@@ -16,7 +16,7 @@ This project is not only a chatbot website. It is a trusted AI regulatory guidan
 
 ### Recommended Title
 
-Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City
+Da Nang BizGuide: A Trusted AI Regulatory Navigator with EVM Blockchain-Based Knowledge Provenance for Business Establishment in Da Nang City
 
 ### Short Product Name
 
@@ -30,22 +30,23 @@ Meaning:
 
 ### Alternative Academic Titles
 
-1. Trusted AI Chatbot for Business Registration Guidance in Da Nang Using EVM-Based Knowledge Provenance
-2. An EVM Blockchain-Secured Regulatory Knowledge Platform for Company Formation Support in Da Nang
-3. AI-Powered Business Establishment Assistant with Verifiable Legal Knowledge for Da Nang City
-4. A Trusted Regulatory Navigator for Local Entrepreneurs and Foreign Investors in Da Nang
+1. A Trusted AI Regulatory Navigator with Blockchain-Based Knowledge Provenance for Business Establishment in Da Nang
+2. Trusted AI Chatbot for Business Registration Guidance in Da Nang Using EVM-Based Knowledge Provenance
+3. An EVM Blockchain-Secured Regulatory Knowledge Platform for Company Formation Support in Da Nang
+4. AI-Powered Business Establishment Assistant with Verifiable Legal Knowledge for Da Nang City
 
 ### Recommended Final Choice
 
 The strongest title is:
 
-Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City
+Da Nang BizGuide: A Trusted AI Regulatory Navigator with EVM Blockchain-Based Knowledge Provenance for Business Establishment in Da Nang City
 
 Reasons:
 
 - It clearly shows the location: Da Nang City.
-- It clearly shows the domain: business establishment guidance.
+- It clearly shows the domain: business establishment and regulatory navigation.
 - It clearly shows the technologies: AI and EVM blockchain.
+- It uses "knowledge provenance," which is more academic and directly explains the blockchain contribution.
 - It uses the word "trusted," which matches the problem of official information, AI hallucination, and knowledge verification.
 - It is still understandable for non-technical readers.
 
@@ -542,7 +543,7 @@ The project contributes a trusted regulatory guidance architecture where officia
 
 Confirmed direction:
 
-1. Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City.
+1. Final title: Da Nang BizGuide: A Trusted AI Regulatory Navigator with EVM Blockchain-Based Knowledge Provenance for Business Establishment in Da Nang City.
 2. Main scope: both local Vietnamese entrepreneur and foreign investor scenarios.
 3. Product language direction: Vietnamese and English user-facing content.
 4. Documentation language: English.
