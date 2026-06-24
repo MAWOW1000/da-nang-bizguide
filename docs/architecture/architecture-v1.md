@@ -66,9 +66,9 @@ Suggested implementation:
 - Prisma
 - Jest
 
-Deployment repository:
+Project folder:
 
-- `da-nang-bizguide-api`
+- `backend/`
 
 ### 3. AI Chatbot Service
 
@@ -126,9 +126,9 @@ Prototype implementation:
 - Local EVM network during development.
 - Low-cost EVM-compatible network or Layer 2 for demo deployment.
 
-Deployment repository:
+Project folder:
 
-- `da-nang-bizguide-contracts`
+- `contract/`
 
 Ethereum mainnet is not required for the first deployment because the project only needs verifiable proof of integrity, not high-value financial settlement.
 

@@ -4,22 +4,22 @@ This plan assumes the project will use a TypeScript-first stack:
 
 - Frontend: Next.js, React, TypeScript, Tailwind CSS, shadcn/ui
 - Backend: NestJS, TypeScript, Prisma, PostgreSQL
-- AI/RAG: backend-integrated service first, separate worker repository later if needed
+- AI/RAG: backend-integrated service first, separate worker process later if needed
 - Blockchain: Solidity, Hardhat or Foundry, EVM-compatible testnet/demo network
 - Cache/jobs: Redis or Valkey
 - Event streaming: Kafka only if the event flow becomes complex
 
-The project uses separate repositories for deployable services because free hosting platforms are easier to manage when each app has its own repository, build command, and environment variables. The backend still starts as a modular monolith; the repository split does not mean every backend module becomes a microservice.
+The project uses one repository with separate top-level folders for frontend, backend, contract, and AI work. The backend starts as a modular monolith; it should not be split into microservices during the MVP.
 
-Planned repositories:
+Planned folders:
 
-| Repository                   | Purpose                                                           |
-| ---------------------------- | ----------------------------------------------------------------- |
-| `da-nang-bizguide`           | Documentation, roadmap, architecture, thesis materials            |
-| `da-nang-bizguide-frontend`  | Next.js frontend                                                  |
-| `da-nang-bizguide-api`       | NestJS backend API                                                |
-| `da-nang-bizguide-contracts` | Solidity contracts and deployment scripts                         |
-| `da-nang-bizguide-worker`    | Optional later worker for queues, indexing, and blockchain events |
+| Folder      | Purpose                                                |
+| ----------- | ------------------------------------------------------ |
+| `docs/`     | Documentation, roadmap, architecture, thesis materials |
+| `frontend/` | Next.js frontend                                       |
+| `backend/`  | NestJS backend API                                     |
+| `contract/` | Solidity contracts and deployment scripts              |
+| `ai/`       | AI/RAG notes, experiments, ingestion, and evaluation   |
 
 ## MVP Target
 
@@ -63,13 +63,13 @@ Detailed guide: [Phase 1 Project Setup Guide](phase-1-project-setup-guide.md)
 
 ### Features
 
-- Create separate GitHub repositories for frontend, API, and contracts.
-- Add Next.js frontend app.
-- Add NestJS backend app.
+- Create top-level implementation folders.
+- Document manual Next.js frontend setup.
+- Document manual NestJS backend setup.
+- Document manual smart contract setup.
 - Use OpenAPI/Swagger from the API as the first contract between frontend and backend.
-- Configure ESLint and Prettier.
-- Configure environment files.
-- Add Docker Compose for local development.
+- Document planned ESLint, Prettier, and environment files.
+- Document local PostgreSQL and Redis assumptions.
 - Add basic README instructions.
 
 ### Suggested Structure
@@ -77,29 +77,23 @@ Detailed guide: [Phase 1 Project Setup Guide](phase-1-project-setup-guide.md)
 ```text
 da-nang-bizguide/
   docs/
+  frontend/
+  backend/
+  contract/
+  ai/
+  data/
   materials/
-  research/
-
-da-nang-bizguide-frontend/
-  src/
-
-da-nang-bizguide-api/
-  src/
-  prisma/
-
-da-nang-bizguide-contracts/
-  contracts/
   scripts/
-  test/
+  tests/
 ```
 
 ### Deliverables
 
-- Frontend starts locally.
-- Backend starts locally.
-- Contracts project compiles locally.
-- Docker Compose can start PostgreSQL and Redis/Valkey for API development.
-- Each deployable service has its own GitHub repository and remote.
+- One GitHub repository exists and is pushed.
+- Top-level folders exist for frontend, backend, contract, and AI.
+- No framework install/init has been done yet.
+- Manual setup instructions are documented.
+- Local PostgreSQL and Redis assumptions are documented.
 
 ## Phase 2: Database and Backend Foundation
 

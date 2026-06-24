@@ -2,11 +2,12 @@
 
 Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City
 
-This repository is the master project workspace for designing, building, documenting, and evaluating a website that helps both local Vietnamese entrepreneurs and foreign investors understand how to open a company in Da Nang, Vietnam.
+This repository is the single project workspace for designing, building, documenting, and evaluating a website that helps both local Vietnamese entrepreneurs and foreign investors understand how to open a company in Da Nang, Vietnam.
 
 The system will combine:
 
 - A public website for business setup guidance.
+- A NestJS backend API for users, knowledge, chatbot orchestration, checklist logic, and blockchain integration.
 - An AI chatbot that answers questions using verified official sources.
 - A regulatory knowledge base with citations, version control, and human review.
 - An EVM-compatible blockchain registry for proving the integrity and history of important information.
@@ -16,58 +17,64 @@ Important note: this project should provide guidance and source-backed explanati
 
 ## Current Stage
 
-Initial project definition and documentation structure.
+Project planning and folder organization.
 
-The first required sections from the whiteboard/photo are drafted in:
+Implementation folders are intentionally empty placeholders. Framework setup will be done manually later.
 
-- [Project Brief](docs/00-project-brief.md)
-- [Brainstorming Notes](docs/01-brainstorming.md)
-- [System Requirements](docs/requirements/system-requirements.md)
-- [Architecture V1](docs/architecture/architecture-v1.md)
-- [Research Plan](docs/research/research-plan.md)
-- [One-Year Roadmap](docs/roadmap/one-year-roadmap.md)
-- [Official Source Candidates](docs/sources/official-sources.md)
-
-## Repository Strategy
-
-This repository is the documentation, planning, research, and architecture repository for Da Nang BizGuide. Deployable applications are split into separate repositories so each service can use a free hosting platform with its own build and deployment settings.
-
-Planned GitHub repositories:
-
-| Repository                   | Purpose                                                                                 | Deployment Target                           |
-| ---------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------- |
-| `da-nang-bizguide`           | Documentation, thesis materials, roadmap, architecture, diagrams                        | No app deployment                           |
-| `da-nang-bizguide-frontend`  | Next.js public website, chatbot UI, checklist UI, admin UI                              | Vercel Free                                 |
-| `da-nang-bizguide-api`       | NestJS backend API, auth, knowledge base, chatbot orchestration, blockchain integration | Render/Railway/Fly free or low-cost service |
-| `da-nang-bizguide-contracts` | Solidity smart contracts and deployment scripts                                         | EVM testnet/demo network                    |
-| `da-nang-bizguide-worker`    | Optional later background worker for indexing, queues, blockchain event processing      | Free worker service if needed               |
-
-The backend should start as a modular monolith, not as many microservices. Separate repositories are used for deployment simplicity, while the API code should still be organized by modules such as auth, sources, knowledge, chatbot, checklist, blockchain, and admin.
-
-## Documentation Repository Structure
+## Repository Structure
 
 ```text
 .
 |-- docs/
-|   |-- 00-project-brief.md
-|   |-- 01-brainstorming.md
 |   |-- architecture/
 |   |-- requirements/
-|   |-- research/
 |   |-- roadmap/
-|   `-- sources/
-|-- src/
+|   `-- research/
+|-- frontend/
+|   `-- README.md
+|-- backend/
+|   `-- README.md
+|-- contract/
+|   `-- README.md
+|-- ai/
 |   `-- README.md
 |-- data/
 |   |-- raw-official-sources/
 |   `-- knowledge-base/
 |-- materials/
 |   `-- images/
-|-- research/
-|   `-- literature/
 |-- scripts/
 `-- tests/
 ```
+
+## Planned Stack
+
+| Area       | Planned Technology                               |
+| ---------- | ------------------------------------------------ |
+| Frontend   | Next.js, React, TypeScript, Tailwind CSS         |
+| Backend    | NestJS, TypeScript, Prisma, PostgreSQL           |
+| AI/RAG     | Approved-source retrieval, embeddings, LLM API   |
+| Blockchain | Solidity, Hardhat or Foundry, EVM test network   |
+| Cache/Jobs | Local Redis first, managed Redis/Valkey later    |
+| Database   | Local PostgreSQL first, managed PostgreSQL later |
+
+## Implementation Folders
+
+- `frontend/`: Next.js frontend will be initialized here manually.
+- `backend/`: NestJS backend API will be initialized here manually.
+- `contract/`: Solidity smart contract project will be initialized here manually.
+- `ai/`: AI/RAG experiments, prompts, evaluation scripts, and ingestion notes will live here.
+- `docs/`: thesis, architecture, requirements, roadmap, and planning documents.
+
+## Important Docs
+
+- [Project Brief](docs/00-project-brief.md)
+- [Brainstorming Notes](docs/01-brainstorming.md)
+- [System Requirements](docs/requirements/system-requirements.md)
+- [Architecture V1](docs/architecture/architecture-v1.md)
+- [One-Year Roadmap](docs/roadmap/one-year-roadmap.md)
+- [Implementation Plan](docs/roadmap/nest-next-implementation-plan.md)
+- [Phase 1 Setup Guide](docs/roadmap/phase-1-project-setup-guide.md)
 
 ## Proposed Product Idea
 
@@ -85,9 +92,10 @@ The blockchain layer will not store private files or full legal text. Instead, i
 
 ## Confirmed Direction
 
-- Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City.
-- Target users: both local Vietnamese entrepreneurs and foreign investors.
-- Blockchain direction: use EVM for the prototype because it is popular, mature, well-supported, and easy to demonstrate.
-- Deployment direction: deploy to a lower-cost EVM-compatible network or Layer 2 instead of Ethereum mainnet.
+- Use one GitHub repository for the whole project.
+- Keep implementation in top-level folders: `frontend/`, `backend/`, `contract/`, and `ai/`.
+- Use EVM for the prototype because it is popular, mature, well-supported, and easy to demonstrate.
+- Use local PostgreSQL and Redis during development because they are already installed.
+- Deploy to low-cost/free services later.
 - Documentation language: English.
-- Product language direction: bilingual Vietnamese and English support, with English project documentation.
+- Product language direction: bilingual Vietnamese and English support.
