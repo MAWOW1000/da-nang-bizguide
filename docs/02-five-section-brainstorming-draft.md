@@ -146,15 +146,15 @@ Recommended technology stack:
 | Storage            | Local storage, S3-compatible storage, MinIO, or IPFS | Store source snapshots off-chain                      |
 | Testing            | Jest, Playwright, Hardhat tests                      | Backend, UI, and smart contract testing               |
 
-Repository split for deployment:
+Project folder split:
 
-| Repository                   | Responsibility                                                    |
-| ---------------------------- | ----------------------------------------------------------------- |
-| `da-nang-bizguide`           | Documentation, roadmap, architecture, thesis materials            |
-| `da-nang-bizguide-frontend`  | Next.js frontend                                                  |
-| `da-nang-bizguide-api`       | NestJS backend API                                                |
-| `da-nang-bizguide-contracts` | Solidity contracts and deployment scripts                         |
-| `da-nang-bizguide-worker`    | Optional later worker for indexing, queues, and blockchain events |
+| Folder      | Responsibility                                         |
+| ----------- | ------------------------------------------------------ |
+| `docs/`     | Documentation, roadmap, architecture, thesis materials |
+| `frontend/` | Next.js frontend                                       |
+| `backend/`  | NestJS backend API                                     |
+| `contract/` | Solidity contracts and deployment scripts              |
+| `ai/`       | RAG experiments, prompts, ingestion, and evaluation    |
 
 Why AI is used:
 
