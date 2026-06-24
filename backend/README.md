@@ -10,5 +10,6 @@ Planned responsibilities:
 - checklist generation
 - blockchain integration
 - admin/reviewer APIs
+- backend tests after the API is initialized
 
 Do not install dependencies here until Phase 1 setup is approved.

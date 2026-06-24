@@ -56,7 +56,6 @@ ai/
 data/
 materials/
 scripts/
-tests/
 ```
 
 ### Why
@@ -69,6 +68,8 @@ Each major concern has a clear home:
 - `contract/`: Solidity project, initialized manually later.
 - `ai/`: prompts, RAG notes, ingestion scripts, evaluation scripts.
 - `data/`: local source snapshots and knowledge-base samples.
+
+Each implementation folder should contain its own tests later. The root project does not need a shared `tests/` folder.
 
 ## Step 4: Keep Implementation Folders Empty First
 
@@ -232,6 +233,7 @@ Phase 1 is complete when:
 - The project uses one GitHub repository.
 - Top-level folders exist: `docs/`, `frontend/`, `backend/`, `contract/`, `ai/`.
 - The old `src/` placeholder structure is removed.
+- The root `tests/` placeholder folder is removed.
 - No framework has been installed or initialized yet.
 - Local PostgreSQL and Redis assumptions are documented.
 - Phase 1 documentation explains manual setup steps for later.

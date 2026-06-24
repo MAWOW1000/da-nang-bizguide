@@ -84,7 +84,6 @@ da-nang-bizguide/
   data/
   materials/
   scripts/
-  tests/
 ```
 
 ### Deliverables
@@ -94,6 +93,7 @@ da-nang-bizguide/
 - No framework install/init has been done yet.
 - Manual setup instructions are documented.
 - Local PostgreSQL and Redis assumptions are documented.
+- Tests will be created inside each implementation folder later.
 
 ## Phase 2: Database and Backend Foundation
 

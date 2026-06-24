@@ -43,8 +43,7 @@ Implementation folders are intentionally empty placeholders. Framework setup wil
 |   `-- knowledge-base/
 |-- materials/
 |   `-- images/
-|-- scripts/
-`-- tests/
+`-- scripts/
 ```
 
 ## Planned Stack
@@ -65,6 +64,8 @@ Implementation folders are intentionally empty placeholders. Framework setup wil
 - `contract/`: Solidity smart contract project will be initialized here manually.
 - `ai/`: AI/RAG experiments, prompts, evaluation scripts, and ingestion notes will live here.
 - `docs/`: thesis, architecture, requirements, roadmap, and planning documents.
+
+Each implementation folder will own its own tests after setup. Do not keep a shared root `tests/` folder.
 
 ## Important Docs
 
