@@ -69,7 +69,7 @@ Detailed guide: [Phase 1 Project Setup Guide](phase-1-project-setup-guide.md)
 - Use OpenAPI/Swagger from the API as the first contract between frontend and backend.
 - Configure ESLint and Prettier.
 - Configure environment files.
-- Add Docker Compose for local development.
+- Configure local PostgreSQL and Redis for API development.
 - Add basic README instructions.
 
 ### Suggested Structure
@@ -98,7 +98,7 @@ da-nang-bizguide-contracts/
 - Frontend starts locally.
 - Backend starts locally.
 - Contracts project compiles locally.
-- Docker Compose can start PostgreSQL and Redis/Valkey for API development.
+- Local PostgreSQL and Redis are reachable by the API.
 - Each deployable service has its own GitHub repository and remote.
 
 ## Phase 2: Database and Backend Foundation

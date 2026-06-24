@@ -15,8 +15,8 @@ Install or confirm these tools:
 ```bash
 node --version
 pnpm --version
-docker --version
-docker compose version
+psql --version
+redis-cli --version
 git --version
 gh auth status
 ```
@@ -30,7 +30,7 @@ corepack prepare pnpm@latest --activate
 
 ### Why
 
-The project has several deployable parts. `pnpm` gives fast TypeScript package management for each repository. Docker is needed so PostgreSQL and Redis/Valkey can run locally without installing them directly on your machine. `gh` is used to create GitHub repositories without doing the setup manually in the browser.
+The project has several deployable parts. `pnpm` gives fast TypeScript package management for each repository. PostgreSQL and Redis are already installed locally, so Phase 1 should use those local services directly. `gh` is used to create GitHub repositories without doing the setup manually in the browser.
 
 ## Step 2: Use This Repository Split
 
@@ -214,48 +214,28 @@ ETHERSCAN_API_KEY=
 
 Each repo deploys separately, so each repo needs its own environment template. This is especially important for blockchain because private keys and RPC keys must never be committed to Git.
 
-## Step 8: Add Local Docker Compose to the API Repo
+## Step 8: Configure Local PostgreSQL and Redis
 
 ### What to do
 
-Create `docker-compose.yml` in `da-nang-bizguide-api`:
-
-```yaml
-services:
-  postgres:
-    image: postgres:16-alpine
-    container_name: bizguide-postgres
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: bizguide
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  redis:
-    image: valkey/valkey:8-alpine
-    container_name: bizguide-redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-
-volumes:
-  postgres_data:
-  redis_data:
-```
-
-Start local services from the API repo:
+Confirm local PostgreSQL and Redis are running:
 
 ```bash
-docker compose up -d
+psql --version
+redis-cli ping
 ```
+
+Create the local database if it does not exist:
+
+```bash
+createdb bizguide
+```
+
+If your PostgreSQL user or password is different, update `DATABASE_URL` in `da-nang-bizguide-api/.env`.
 
 ### Why
 
-PostgreSQL is the main app database. Redis/Valkey is useful for caching, rate limiting, short-lived data, and background jobs. The API owns these local development dependencies because the frontend should not connect directly to the database or Redis.
+PostgreSQL is the main app database. Redis is useful for caching, rate limiting, short-lived data, and background jobs. Since both are already installed locally, using them directly keeps Phase 1 simpler and avoids Docker setup. The frontend should still never connect directly to PostgreSQL or Redis; only the API should.
 
 ## Step 9: Add Formatting and README Files
 
@@ -339,7 +319,8 @@ pnpm build
 
 cd ../da-nang-bizguide-api
 pnpm install
-docker compose up -d
+createdb bizguide
+redis-cli ping
 pnpm start:dev
 pnpm lint
 pnpm build
@@ -354,7 +335,7 @@ Expected result:
 - Frontend runs on `http://localhost:3000`.
 - API runs on `http://localhost:3001` or the configured NestJS port.
 - PostgreSQL runs on port `5432`.
-- Redis/Valkey runs on port `6379`.
+- Redis runs on port `6379`.
 - Contracts compile and tests run.
 
 ### Why
@@ -369,7 +350,7 @@ Phase 1 is complete when:
 - Next.js frontend repo runs locally.
 - NestJS API repo runs locally.
 - Contracts repo exists and compiles.
-- Docker Compose starts PostgreSQL and Redis/Valkey for API development.
+- Local PostgreSQL and Redis are running and reachable by the API.
 - `.env.example` files document required environment variables.
 - Each repository has README setup instructions.
 - Each repository has a GitHub remote and initial push.

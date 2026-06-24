@@ -107,7 +107,7 @@ Recommended stack for the prototype:
 | Blockchain        | Solidity, Hardhat, OpenZeppelin, Ethers.js     | Practical smart contract prototype on an EVM-compatible chain                                                        |
 | Off-chain Storage | S3-compatible storage, MinIO, or IPFS          | Store source documents and snapshots outside the blockchain                                                          |
 | Auth              | OAuth/email login, role-based access control   | Separate public users, reviewers, and admins                                                                         |
-| DevOps            | Docker, Docker Compose, GitHub Actions         | Reproducible local development and testing                                                                           |
+| DevOps            | Local PostgreSQL/Redis, GitHub Actions         | Simple local development with installed services and repeatable CI checks                                            |
 | Testing           | Jest, Playwright, smart contract tests         | Backend, UI, and blockchain verification                                                                             |
 
 Deployment strategy:
