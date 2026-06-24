@@ -97,18 +97,18 @@ Out of scope for the first prototype:
 
 Recommended stack for the prototype:
 
-| Layer | Technology | Reason |
-| --- | --- | --- |
-| Frontend | Next.js, React, TypeScript, Tailwind CSS | Fast web development, strong UI structure, good multilingual support |
-| Backend API | Python FastAPI | Good fit for AI services, APIs, and research prototypes |
-| Database | PostgreSQL | Reliable relational storage for users, documents, versions, logs |
-| Vector Search | pgvector or Qdrant | Retrieval for chatbot answers |
-| AI / Chatbot | RAG pipeline, embeddings, LLM API or local LLM | Source-grounded answers and question understanding |
-| Blockchain | Solidity, Hardhat, OpenZeppelin, Ethers.js | Practical smart contract prototype on an EVM-compatible chain |
-| Off-chain Storage | S3-compatible storage, MinIO, or IPFS | Store source documents and snapshots outside the blockchain |
-| Auth | OAuth/email login, role-based access control | Separate public users, reviewers, and admins |
-| DevOps | Docker, Docker Compose, GitHub Actions | Reproducible local development and testing |
-| Testing | Pytest, Playwright, smart contract tests | Backend, UI, and blockchain verification |
+| Layer             | Technology                                     | Reason                                                                                                               |
+| ----------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Frontend          | Next.js, React, TypeScript, Tailwind CSS       | Fast web development, strong UI structure, good multilingual support                                                 |
+| Backend API       | NestJS, TypeScript, Prisma                     | Structured API development, strong module boundaries, and good fit with the TypeScript frontend/blockchain ecosystem |
+| Database          | PostgreSQL                                     | Reliable relational storage for users, documents, versions, logs                                                     |
+| Vector Search     | pgvector or Qdrant                             | Retrieval for chatbot answers                                                                                        |
+| AI / Chatbot      | RAG pipeline, embeddings, LLM API or local LLM | Source-grounded answers and question understanding                                                                   |
+| Blockchain        | Solidity, Hardhat, OpenZeppelin, Ethers.js     | Practical smart contract prototype on an EVM-compatible chain                                                        |
+| Off-chain Storage | S3-compatible storage, MinIO, or IPFS          | Store source documents and snapshots outside the blockchain                                                          |
+| Auth              | OAuth/email login, role-based access control   | Separate public users, reviewers, and admins                                                                         |
+| DevOps            | Docker, Docker Compose, GitHub Actions         | Reproducible local development and testing                                                                           |
+| Testing           | Jest, Playwright, smart contract tests         | Backend, UI, and blockchain verification                                                                             |
 
 Deployment strategy:
 
