@@ -1,0 +1,18 @@
+[submodule "docs"]
+	path = docs
+	url = git@github-personal:MAWOW1000/da-nang-bizguide-docs.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github-personal:MAWOW1000/da-nang-bizguide-frontend.git
+[submodule "backend"]
+	path = backend
+	url = git@github-personal:MAWOW1000/da-nang-bizguide-backend.git
+[submodule "contract"]
+	path = contract
+	url = git@github-personal:MAWOW1000/da-nang-bizguide-contract.git
+[submodule "ai"]
+	path = ai
+	url = git@github-personal:MAWOW1000/da-nang-bizguide-ai.git
+[submodule "data"]
+	path = data
+	url = git@github-personal:MAWOW1000/da-nang-bizguide-data.git

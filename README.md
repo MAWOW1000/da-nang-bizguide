@@ -2,7 +2,7 @@
 
 Final title: Da Nang BizGuide: A Trusted AI and EVM Blockchain Platform for Business Establishment Guidance in Da Nang City
 
-This repository is the single project workspace for designing, building, documenting, and evaluating a website that helps both local Vietnamese entrepreneurs and foreign investors understand how to open a company in Da Nang, Vietnam.
+This repository is the parent workspace for designing, building, documenting, and evaluating a website that helps both local Vietnamese entrepreneurs and foreign investors understand how to open a company in Da Nang, Vietnam.
 
 The system will combine:
 
@@ -17,33 +17,51 @@ Important note: this project should provide guidance and source-backed explanati
 
 ## Current Stage
 
-Project planning and folder organization.
+Project planning and workspace organization.
 
-Implementation folders are intentionally empty placeholders. Framework setup will be done manually later.
+Each main project folder is its own Git repository and is attached to this workspace as a Git submodule. Framework setup will be done manually later inside the relevant folder repo.
 
 ## Repository Structure
 
 ```text
 .
 |-- docs/
-|   |-- architecture/
-|   |-- requirements/
-|   |-- roadmap/
-|   `-- research/
+|   `-- ...
 |-- frontend/
-|   `-- README.md
+|   `-- ...
 |-- backend/
-|   `-- README.md
+|   `-- ...
 |-- contract/
-|   `-- README.md
+|   `-- ...
 |-- ai/
-|   `-- README.md
+|   `-- ...
 |-- data/
-|   |-- raw-official-sources/
-|   `-- knowledge-base/
-|-- materials/
-|   `-- images/
-`-- scripts/
+|   `-- ...
+`-- README.md
+```
+
+## Workspace Repositories
+
+| Folder      | GitHub Repository                                             |
+| ----------- | ------------------------------------------------------------- |
+| `docs/`     | `git@github-personal:MAWOW1000/da-nang-bizguide-docs.git`     |
+| `frontend/` | `git@github-personal:MAWOW1000/da-nang-bizguide-frontend.git` |
+| `backend/`  | `git@github-personal:MAWOW1000/da-nang-bizguide-backend.git`  |
+| `contract/` | `git@github-personal:MAWOW1000/da-nang-bizguide-contract.git` |
+| `ai/`       | `git@github-personal:MAWOW1000/da-nang-bizguide-ai.git`       |
+| `data/`     | `git@github-personal:MAWOW1000/da-nang-bizguide-data.git`     |
+| Workspace   | `git@github-personal:MAWOW1000/da-nang-bizguide.git`          |
+
+Clone the full workspace with:
+
+```bash
+git clone --recurse-submodules git@github-personal:MAWOW1000/da-nang-bizguide.git
+```
+
+If the workspace is already cloned:
+
+```bash
+git submodule update --init --recursive
 ```
 
 ## Planned Stack
@@ -59,11 +77,12 @@ Implementation folders are intentionally empty placeholders. Framework setup wil
 
 ## Implementation Folders
 
-- `frontend/`: Next.js frontend will be initialized here manually.
-- `backend/`: NestJS backend API will be initialized here manually.
-- `contract/`: Solidity smart contract project will be initialized here manually.
-- `ai/`: AI/RAG experiments, prompts, evaluation scripts, and ingestion notes will live here.
+- `frontend/`: Next.js frontend repo, initialized manually later.
+- `backend/`: NestJS backend API repo, initialized manually later.
+- `contract/`: Solidity smart contract repo, initialized manually later.
+- `ai/`: AI/RAG experiments, prompts, evaluation scripts, and ingestion notes.
 - `docs/`: thesis, architecture, requirements, roadmap, and planning documents.
+- `data/`: source snapshots and knowledge-base data.
 
 Each implementation folder will own its own tests after setup. Do not keep a shared root `tests/` folder.
 
@@ -93,8 +112,8 @@ The blockchain layer will not store private files or full legal text. Instead, i
 
 ## Confirmed Direction
 
-- Use one GitHub repository for the whole project.
-- Keep implementation in top-level folders: `frontend/`, `backend/`, `contract/`, and `ai/`.
+- Use a parent workspace GitHub repository with folder repos attached as submodules.
+- Keep implementation in top-level folder repos: `frontend/`, `backend/`, `contract/`, and `ai/`.
 - Use EVM for the prototype because it is popular, mature, well-supported, and easy to demonstrate.
 - Use local PostgreSQL and Redis during development because they are already installed.
 - Deploy to low-cost/free services later.
