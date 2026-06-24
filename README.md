@@ -28,7 +28,23 @@ The first required sections from the whiteboard/photo are drafted in:
 - [One-Year Roadmap](docs/roadmap/one-year-roadmap.md)
 - [Official Source Candidates](docs/sources/official-sources.md)
 
-## Repository Structure
+## Repository Strategy
+
+This repository is the documentation, planning, research, and architecture repository for Da Nang BizGuide. Deployable applications are split into separate repositories so each service can use a free hosting platform with its own build and deployment settings.
+
+Planned GitHub repositories:
+
+| Repository                   | Purpose                                                                                 | Deployment Target                           |
+| ---------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------- |
+| `da-nang-bizguide`           | Documentation, thesis materials, roadmap, architecture, diagrams                        | No app deployment                           |
+| `da-nang-bizguide-frontend`  | Next.js public website, chatbot UI, checklist UI, admin UI                              | Vercel Free                                 |
+| `da-nang-bizguide-api`       | NestJS backend API, auth, knowledge base, chatbot orchestration, blockchain integration | Render/Railway/Fly free or low-cost service |
+| `da-nang-bizguide-contracts` | Solidity smart contracts and deployment scripts                                         | EVM testnet/demo network                    |
+| `da-nang-bizguide-worker`    | Optional later background worker for indexing, queues, blockchain event processing      | Free worker service if needed               |
+
+The backend should start as a modular monolith, not as many microservices. Separate repositories are used for deployment simplicity, while the API code should still be organized by modules such as auth, sources, knowledge, chatbot, checklist, blockchain, and admin.
+
+## Documentation Repository Structure
 
 ```text
 .
@@ -41,10 +57,7 @@ The first required sections from the whiteboard/photo are drafted in:
 |   |-- roadmap/
 |   `-- sources/
 |-- src/
-|   |-- frontend/
-|   |-- backend/
-|   |-- ai/
-|   `-- blockchain/
+|   `-- README.md
 |-- data/
 |   |-- raw-official-sources/
 |   `-- knowledge-base/

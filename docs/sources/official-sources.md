@@ -131,4 +131,3 @@ For every source, collect:
 - Reviewer
 - Review status
 - Blockchain version id if approved
-
