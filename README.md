@@ -15,11 +15,54 @@ The system will combine:
 
 Important note: this project should provide guidance and source-backed explanations, not formal legal advice. All legal content must be verified against official sources before being shown as trusted information.
 
+## Quick Start
+
+```bash
+make dev
+```
+
+That is the whole thing. It initialises submodules, creates `.env` files from the
+examples, starts Postgres with pgvector in Docker, applies migrations, installs
+dependencies, builds the backend, launches all three services, loads the fixture
+documents if the knowledge base is empty, and follows the logs. Ctrl-C stops
+everything. It is safe to re-run — each step checks whether it is already done.
+
+Then open **http://localhost:3457/chatbot**.
+
+Two API keys are required in `ai/.env` before answers will work; `make dev`
+tells you if they are missing:
+
+| Key | Where to get it |
+| --- | --- |
+| `DEEPSEEK_API_KEY` | https://platform.deepseek.com |
+| `EMBEDDING_API_KEY` | https://dash.voyageai.com |
+
+Other targets — `make help` lists them all:
+
+| Command | Purpose |
+| --- | --- |
+| `make status` | What is running right now |
+| `make stop` | Stop the services, leave Postgres up |
+| `make test` | Unit tests for the AI service and the backend |
+| `make eval` | Evaluation harness against the running stack |
+| `make db-reset` | Drop and recreate the database |
+| `make psql` | psql shell on the dev database |
+| `make clean` | Stop everything, remove logs and pidfiles |
+
+Ports: web `3457`, API `3456`, AI `8100`, Postgres `5433`. Override on the
+command line if any of those clash, e.g. `make dev WEB_PORT=4000`.
+
+Answers currently come from **synthetic fixture documents**, labelled as such in
+every citation. Real curated sources belong in `data/raw-official-sources/`.
+
 ## Current Stage
 
-Project planning and workspace organization.
+AI/RAG chatbot working end to end: retrieval over approved sources, streamed
+answers with citations, per-claim verification, and an explicit refusal when the
+knowledge base does not cover a question. Blockchain registry, authentication
+and the admin portal are not built yet.
 
-Each main project folder is its own Git repository and is attached to this workspace as a Git submodule. Framework setup will be done manually later inside the relevant folder repo.
+Each main project folder is its own Git repository and is attached to this workspace as a Git submodule.
 
 ## Repository Structure
 
