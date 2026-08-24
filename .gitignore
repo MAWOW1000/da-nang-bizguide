@@ -36,3 +36,7 @@ Thumbs.db
 .idea/
 .vscode/
 
+
+# Local dev runtime (make dev)
+.dev-logs/
+.dev-pids/
