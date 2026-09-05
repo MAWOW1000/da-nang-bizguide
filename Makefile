@@ -38,7 +38,7 @@ ERR  := \033[31m
 OFF  := \033[0m
 
 .PHONY: help dev setup stop restart status logs check submodules env db db-stop db-reset \
-        migrate deps build ingest test test-ai test-api eval clean psql
+        migrate deps build ingest test test-ai test-api eval eval-judge clean psql
 
 ## ---------------------------------------------------------------------------
 ## Main entry point
@@ -297,6 +297,12 @@ eval: ## Run the evaluation harness against the running stack
 	cd ai
 	"$(PY)" evaluation/run_eval.py --service "http://127.0.0.1:$(AI_PORT)" \
 		--json evaluation/results/latest.json
+
+eval-judge: ## Run the independent agent-as-judge evaluation against the running stack
+	@printf "$(BOLD)Agent-as-Judge Evaluation$(OFF) $(DIM)(needs stack or AI service running)$(OFF)\n"
+	cd ai
+	"$(PY)" evaluation/run_judge.py --service "http://127.0.0.1:$(AI_PORT)" \
+		--output evaluation/results/judge_report.json
 
 clean: stop db-stop ## Stop everything and remove logs and pidfiles
 	@rm -rf "$(LOG_DIR)" "$(PID_DIR)"
