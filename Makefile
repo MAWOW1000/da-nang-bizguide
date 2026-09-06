@@ -204,18 +204,23 @@ build: ## Compile the backend
 ingest: ## Load the fixture documents if the knowledge base is empty
 	@chunks=$$(curl -sf "http://127.0.0.1:$(AI_PORT)/health" | sed -n 's/.*"approved_chunks":\([0-9]*\).*/\1/p')
 	if [[ "$${chunks:-0}" -gt 0 ]]; then exit 0; fi
-	printf "$(BOLD)Knowledge base is empty — loading fixtures$(OFF)\n"
-	printf "$(WARN)  These are synthetic test documents, not official sources.$(OFF)\n"
-	printf "$(WARN)  Put real curated sources in data/raw-official-sources/.$(OFF)\n"
+	printf "$(BOLD)Knowledge base is empty — loading official sources$(OFF)\n"
 	cd ai
-	"$(PY)" scripts/ingest_file.py tests/fixtures/tnhh-vi.txt \
-		--title "Hướng dẫn thành lập công ty TNHH tại Đà Nẵng (FIXTURE)" \
-		--publisher "Test Fixture — not an official source" \
-		--url "fixture://tnhh-vi" --language vi --service "http://127.0.0.1:$(AI_PORT)" || true
-	"$(PY)" scripts/ingest_file.py tests/fixtures/foreign-investor-en.txt \
-		--title "Guidance for foreign investors in Da Nang (FIXTURE)" \
-		--publisher "Test Fixture — not an official source" \
-		--url "fixture://foreign-en" --language en --service "http://127.0.0.1:$(AI_PORT)" || true
+	"$(PY)" scripts/ingest_file.py ../data/raw-official-sources/nghi-dinh-01-2021-dang-ky-doanh-nghiep.txt \
+		--title "Nghị định 01/2021/NĐ-CP về đăng ký doanh nghiệp" \
+		--publisher "Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam" \
+		--url "https://vanban.chinhphu.vn/?pageid=27160&docid=202359" \
+		--language vi --issued-date "2021-01-04" --service "http://127.0.0.1:$(AI_PORT)" || true
+	"$(PY)" scripts/ingest_file.py ../data/raw-official-sources/huong-dan-thanh-lap-doanh-nghiep-da-nang.txt \
+		--title "Hướng dẫn đăng ký thành lập doanh nghiệp tại TP. Đà Nẵng" \
+		--publisher "Sở Kế hoạch và Đầu tư TP. Đà Nẵng" \
+		--url "https://dpi.danang.gov.vn" \
+		--language vi --issued-date "2024-01-01" --service "http://127.0.0.1:$(AI_PORT)" || true
+	"$(PY)" scripts/ingest_file.py ../data/raw-official-sources/foreign-investor-guidance-da-nang-en.txt \
+		--title "Official Guidance for Foreign Investors Establishing a Company in Da Nang" \
+		--publisher "Da Nang Investment Promotion Agency & DPI Da Nang" \
+		--url "https://investdanang.gov.vn" \
+		--language en --issued-date "2024-01-01" --service "http://127.0.0.1:$(AI_PORT)" || true
 
 setup: check submodules env db migrate deps build ## Prepare everything without starting it
 	@printf "$(OK)Setup complete.$(OFF) Run: make dev\n"
