@@ -201,26 +201,10 @@ build: ## Compile the backend
 		npm run build
 	fi
 
-ingest: ## Load the fixture documents if the knowledge base is empty
+ingest: ## Show the approved corpus; legal sources require explicit review
 	@chunks=$$(curl -sf "http://127.0.0.1:$(AI_PORT)/health" | sed -n 's/.*"approved_chunks":\([0-9]*\).*/\1/p')
-	if [[ "$${chunks:-0}" -gt 0 ]]; then exit 0; fi
-	printf "$(BOLD)Knowledge base is empty — loading official sources$(OFF)\n"
-	cd ai
-	"$(PY)" scripts/ingest_file.py ../data/raw-official-sources/nghi-dinh-01-2021-dang-ky-doanh-nghiep.txt \
-		--title "Nghị định 01/2021/NĐ-CP về đăng ký doanh nghiệp" \
-		--publisher "Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam" \
-		--url "https://vanban.chinhphu.vn/?pageid=27160&docid=202359" \
-		--language vi --issued-date "2021-01-04" --service "http://127.0.0.1:$(AI_PORT)" || true
-	"$(PY)" scripts/ingest_file.py ../data/raw-official-sources/huong-dan-thanh-lap-doanh-nghiep-da-nang.txt \
-		--title "Hướng dẫn đăng ký thành lập doanh nghiệp tại TP. Đà Nẵng" \
-		--publisher "Sở Kế hoạch và Đầu tư TP. Đà Nẵng" \
-		--url "https://dpi.danang.gov.vn" \
-		--language vi --issued-date "2024-01-01" --service "http://127.0.0.1:$(AI_PORT)" || true
-	"$(PY)" scripts/ingest_file.py ../data/raw-official-sources/foreign-investor-guidance-da-nang-en.txt \
-		--title "Official Guidance for Foreign Investors Establishing a Company in Da Nang" \
-		--publisher "Da Nang Investment Promotion Agency & DPI Da Nang" \
-		--url "https://investdanang.gov.vn" \
-		--language en --issued-date "2024-01-01" --service "http://127.0.0.1:$(AI_PORT)" || true
+	printf "$(DIM)Approved knowledge chunks: $${chunks:-unknown}. Automatic legacy source ingestion is disabled.$(OFF)\n"
+	printf "$(DIM)Review data/verified-official-sources/manifest.json before updating the live corpus.$(OFF)\n"
 
 setup: check submodules env db migrate deps build ## Prepare everything without starting it
 	@printf "$(OK)Setup complete.$(OFF) Run: make dev\n"
